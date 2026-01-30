@@ -1,0 +1,26 @@
+.editor__area {
+  width: 100%;
+  min-height: 180px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  resize: vertical;
+}
+.editor__area--over {
+  border-color: var(--warning);
+  box-shadow: 0 0 0 3px rgba(255, 118, 118, 0.25);
+}
+
+.editor__hint {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.editor__warn {
+  color: var(--warning);
+}
