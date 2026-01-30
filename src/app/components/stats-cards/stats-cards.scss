@@ -1,0 +1,35 @@
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat {
+  padding: 22px;
+}
+.stat__title {
+  margin: 0 0 6px 0;
+  color: var(--muted);
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.stat__value {
+  margin: 0;
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 800;
+}
+
+.stat--violet {
+  box-shadow: inset 0 0 0 2px rgba(176, 132, 255, 0.24);
+}
+.stat--amber {
+  box-shadow: inset 0 0 0 2px rgba(255, 177, 65, 0.24);
+}
+.stat--salmon {
+  box-shadow: inset 0 0 0 2px rgba(255, 122, 122, 0.24);
+}
