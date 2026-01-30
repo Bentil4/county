@@ -1,1 +1,19 @@
-<p>text-editor works!</p>
+<label for="editor-area" class="sr-only">Enter text</label>
+<textarea
+  id="editor-area"
+  class="editor__area"
+  [formControl]="control"
+  rows="8"
+  [attr.aria-invalid]="overLimit()"
+  [class.editor__area--over]="overLimit()"
+  (focus)="focused.set(true)"
+  (blur)="focused.set(false)"
+  placeholder="Start typing here… (or paste your text)"
+></textarea>
+
+<div class="editor__hint" aria-live="polite">
+  <span class="editor__warn" [style.visibility]="overLimit() ? 'visible' : 'hidden'">
+    • Limit reached: Your text exceeds {{ limit() ?? 0 }} characters.
+  </span>
+  <span>{{ helperText() }}</span>
+</div>
