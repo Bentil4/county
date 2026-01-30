@@ -1,1 +1,130 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* DARK THEME */
+:root {
+  --bg: #0e0f14;
+  --surface: #181a22;
+  --surface-2: #20222d;
+
+  --text: #f2f2f6;
+  --muted: #b4b7c5;
+
+  /* Brand */
+  --violet: #b084ff;
+  --violet-soft: #c9a8ff;
+
+  --amber: #ffb141;
+  --amber-soft: #ffd08a;
+
+  --salmon: #ff7a7a;
+  --salmon-soft: #ffaaaa;
+
+  /* Alerts */
+  --warning: #ff7676;
+
+  /* Primary UI */
+  --focus: #99c1ff;
+  --border: #2a2d3a;
+
+  /* Layout */
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  --gap: 20px;
+}
+
+/* LIGHT THEME */
+:root[data-theme='light'] {
+  --bg: #f7f7fb;
+  --surface: #ffffff;
+  --surface-2: #eceef5;
+
+  --text: #1e2433;
+  --muted: #4f566b;
+
+  --violet: #7e3ff2;
+  --violet-soft: #a279ff;
+
+  --amber: #ff8f2d;
+  --amber-soft: #ffb56b;
+
+  --salmon: #ff4f64;
+  --salmon-soft: #ff8fa0;
+
+  --warning: #d22525;
+
+  --focus: #2b7cff;
+  --border: #dadce6;
+}
+
+:where(button, input, textarea, select, a, [tabindex]) {
+  outline: none;
+}
+
+:where(button, input, textarea, select, a, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Utility classes */
+.container {
+  width: min(1120px, 92vw);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
