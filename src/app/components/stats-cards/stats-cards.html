@@ -1,1 +1,18 @@
-<p>stats-cards works!</p>
+<section class="stats container" aria-label="Text statistics">
+  <article class="card stat stat--violet" aria-live="polite">
+    <h3 class="stat__title">
+      Total Characters @if (excludeSpaces()) { <small>(no space)</small> }
+    </h3>
+    <p class="stat__value">{{ chars() | number }}</p>
+  </article>
+
+  <article class="card stat stat--amber" aria-live="polite">
+    <h3 class="stat__title">Word Count</h3>
+    <p class="stat__value">{{ words() | number }}</p>
+  </article>
+
+  <article class="card stat stat--salmon" aria-live="polite">
+    <h3 class="stat__title">Sentence Count</h3>
+    <p class="stat__value">{{ sentences() | number }}</p>
+  </article>
+</section>
