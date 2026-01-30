@@ -1,1 +1,12 @@
-<p>home works!</p>
+<section>
+    <app-header 
+    [theme]="themeSvc.theme()" 
+    (themeToggled)="themeSvc.toggle()"> 
+</app-header>
+
+<section class="container" style="padding-block: 24px">
+  <h1 style="font-size: clamp(28px, 6vw, 56px); line-height: 1.1; margin: 0">
+    Analyze your text in real‑time.
+  </h1>
+</section>
+</section>

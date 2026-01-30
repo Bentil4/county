@@ -1,1 +1,28 @@
-<p>header works!</p>
+<header>
+  @if (isLight()) {
+    <img src="assets/images/logo-light-theme.svg" alt="day mode" aria-hidden="true" priority />
+  } @else {
+    <img src="assets/images/logo-dark-theme.svg" alt="night mode" aria-hidden="true" priority />
+  }
+
+  <button
+    type="button"
+    class="toggle"
+    role="switch"
+    [attr.aria-checked]="isLight()"
+    [attr.aria-label]="switchLabel()"
+    (click)="themeToggled.emit()"
+    (keyup.enter)="themeToggled.emit()"
+    (keyup.space)="themeToggled.emit()"
+    [class.toggle--light]="isLight()"
+    [class.toggle--dark]="!isLight()"
+  >
+    <span aria-hidden="true">
+      @if (isLight()) {
+        <img src="assets/images/icon-moon.svg" alt="night mode" aria-hidden="true" priority />
+      } @else {
+        <img src="assets/images/icon-sun.svg" alt="day mode" aria-hidden="true" priority />
+      }
+    </span>
+  </button>
+</header>
