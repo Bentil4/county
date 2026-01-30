@@ -1,1 +1,26 @@
-<p>letter-density works!</p>
+<section class="container density">
+  <h3 class="density__title">Letter Density</h3>
+
+  @if (total() === 0) {
+    <p class="density__empty">No characters found. Start typing to see letter density.</p>
+  } @else {
+    <ul class="density__list" role="list">
+      @for (item of visible(); track item.letter) {
+        <li class="density__row">
+          <span class="density__label" aria-hidden="true">{{ item.letter }}</span>
+          <div class="density__bar" role="img" [attr.aria-label]="aria(item)">
+            <span class="density__fill" [style.width.%]="item.percent * 100"></span>
+          </div>
+          <span class="density__meta">{{ item.count }} ({{ (item.percent * 100) | number:'1.0-2' }}%)</span>
+        </li>
+      }
+    </ul>
+
+    <button type="button"
+            class="density__more"
+            (click)="toggleExpanded()"
+            [attr.aria-expanded]="expanded()">
+      @if (expanded()) { See less } @else { See more }
+    </button>
+  }
+</section>
