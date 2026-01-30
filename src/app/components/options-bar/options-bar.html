@@ -1,0 +1,28 @@
+<div class="left">
+  <label class="chk">
+    <input type="checkbox" [formControl]="form.controls.excludeSpaces" />
+    <span>Exclude Spaces</span>
+  </label>
+
+  <label class="chk">
+    <input type="checkbox" [formControl]="form.controls.limitEnabled" />
+    <span>Set Character Limit</span>
+  </label>
+
+  @if (showLimit) {
+    <label class="chk" for="char-limit">
+      <span class="sr-only">Character limit</span>
+      <input
+        id="char-limit"
+        class="limit-input"
+        type="number"
+        min="1"
+        [formControl]="form.controls.limitValue"
+        [attr.aria-invalid]="limitInvalid" />
+    </label>
+  }
+</div>
+
+<div class="right" aria-live="polite">
+  Approx. reading time: {{ readingTimeText() }}
+</div>
